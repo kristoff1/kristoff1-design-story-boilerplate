@@ -1,8 +1,8 @@
 import 'package:design/design.dart';
 import 'package:flutter/material.dart';
 
-class LetterSizedComponents extends StatelessWidget {
-  const LetterSizedComponents({super.key});
+class LetterSizedComponentsShowcase extends StatelessWidget {
+  const LetterSizedComponentsShowcase({super.key});
 
   @override
   Widget build(BuildContext context) {

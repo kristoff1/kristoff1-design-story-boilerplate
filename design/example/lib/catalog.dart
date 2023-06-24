@@ -1,6 +1,7 @@
 import 'package:example/pages/component_images_showcase.dart';
 import 'package:example/pages/components_image_interactive_showcase.dart';
-import 'package:example/pages/letter_sized_component.dart';
+import 'package:example/pages/letter_sized_component_showcase.dart';
+import 'package:example/pages/text_components_showcase.dart';
 import 'package:flutter/material.dart';
 
 class Catalog extends StatelessWidget {
@@ -46,13 +47,25 @@ class Catalog extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return const LetterSizedComponents();
+                    return const LetterSizedComponentsShowcase();
                   },
                 ),
               );
             },
-            child: const Text('Size Interactive Images Showcase'),
+            child: const Text('Letter Interactive Images Showcase'),
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const TextComponentsShowcase();
+                    },
+                  ),
+                );
+              },
+              child: const Text('Text Components Showcase'))
         ],
       ),
     );
