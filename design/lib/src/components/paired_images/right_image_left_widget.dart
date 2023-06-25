@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../atoms/images/base_images.dart';
 import '../../atoms/images/image_types.dart';
 
-///REPETITIVE SO IT CAN EASILY BE COPIED
+///REPETITIVE SO IT CAN BE EASILY COPIED
 enum LeftWidgetVerticalAlignment {
   top,
   center,
