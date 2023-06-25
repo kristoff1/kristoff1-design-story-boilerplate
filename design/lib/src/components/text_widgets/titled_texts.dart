@@ -6,26 +6,40 @@ enum TitledTextDirection {
   center,
 }
 
+enum TextVerticalAlignment {
+  top,
+  center,
+  bottom,
+  stretch,
+}
+
 class TitledText extends StatelessWidget {
   final String text;
   final String title;
   final TitledTextDirection textDirection;
+  final TextVerticalAlignment verticalAlignment;
+  final BorderRadius? borderRadius;
   final BoxDecoration? decoration;
+  final EdgeInsetsGeometry? padding;
 
   const TitledText({
     super.key,
     required this.text,
     required this.title,
     this.textDirection = TitledTextDirection.left,
+    this.verticalAlignment = TextVerticalAlignment.center,
+    this.borderRadius,
     this.decoration,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: decoration,
+      padding: padding,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: _getVerticalAlignment(verticalAlignment),
         crossAxisAlignment: _getTextDirection(textDirection),
         children: [
           Text(
@@ -39,6 +53,7 @@ class TitledText extends StatelessWidget {
           Text(
             text,
             textAlign: _getTextAlign(textDirection),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
       ),
@@ -64,6 +79,20 @@ class TitledText extends StatelessWidget {
         return TextAlign.right;
       case TitledTextDirection.center:
         return TextAlign.center;
+    }
+  }
+
+  MainAxisAlignment _getVerticalAlignment(
+      TextVerticalAlignment verticalAlignment) {
+    switch (verticalAlignment) {
+      case TextVerticalAlignment.top:
+        return MainAxisAlignment.start;
+      case TextVerticalAlignment.center:
+        return MainAxisAlignment.center;
+      case TextVerticalAlignment.bottom:
+        return MainAxisAlignment.end;
+      case TextVerticalAlignment.stretch:
+        return MainAxisAlignment.spaceBetween;
     }
   }
 }

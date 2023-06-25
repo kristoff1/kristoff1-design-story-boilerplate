@@ -1,5 +1,6 @@
 import 'package:example/pages/component_images_showcase.dart';
 import 'package:example/pages/components_image_interactive_showcase.dart';
+import 'package:example/pages/example_1.dart';
 import 'package:example/pages/image_and_widgets_showcase.dart';
 import 'package:example/pages/letter_sized_component_showcase.dart';
 import 'package:example/pages/text_components_showcase.dart';
@@ -18,69 +19,51 @@ class Catalog extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
+              _navigateToPage(
                 context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return const ComponentImageShowcase();
-                  },
-                ),
+                const ComponentImageShowcase(),
               );
             },
             child: const Text('Component Images Showcase'),
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return const ComponentsImageInteractiveShowcase();
-                  },
-                ),
-              );
+              _navigateToPage(context, const ComponentsImageInteractiveShowcase());
             },
             child: const Text('Size Interactive Images Showcase'),
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return const LetterSizedComponentsShowcase();
-                  },
-                ),
-              );
+              _navigateToPage(context, const LetterSizedComponentsShowcase());
             },
             child: const Text('Letter Interactive Images Showcase'),
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const TextComponentsShowcase();
-                    },
-                  ),
-                );
+                _navigateToPage(context, const TextComponentsShowcase());
               },
               child: const Text('Text Components Showcase')),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return const ImageAndWidgetTextShowcase();
-                    },
-                  ),
-                );
+                _navigateToPage(context, const ImageAndWidgetTextShowcase());
               },
               child: const Text('Image and Widget Showcase')),
+          ElevatedButton(
+              onPressed: () {
+                _navigateToPage(context, const Example1());
+              },
+              child: const Text('Example 1')),
         ],
       ),
+    );
+  }
+
+  void _navigateToPage(BuildContext context, Widget destination) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) {
+        return destination;
+      }),
     );
   }
 }
