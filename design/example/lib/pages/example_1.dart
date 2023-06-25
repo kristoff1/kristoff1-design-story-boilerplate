@@ -6,6 +6,7 @@ class Example1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const contentPadding = EdgeInsets.symmetric(horizontal: 16, vertical: 8);
     return Theme(
       data: ThemeData(
         textTheme: const TextTheme(
@@ -30,7 +31,7 @@ class Example1 extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.redAccent,
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: contentPadding,
                     text: 'Titled Text. Description or Image Caption',
                     title: 'Titled Text'),
                 imagePath: 'assets/images/placeholder.png',
@@ -45,7 +46,7 @@ class Example1 extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.green,
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: contentPadding,
                   title: 'Titled Text',
                   text: 'Titled Text. Description or Image Caption',
                 ),
@@ -61,7 +62,7 @@ class Example1 extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.blueAccent,
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: contentPadding,
                     text: 'Titled Text. Description or Image Caption',
                     title: 'Titled Text'),
                 imagePath: 'assets/images/placeholder.png',
@@ -76,7 +77,7 @@ class Example1 extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.purpleAccent,
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: contentPadding,
                   title: 'Titled Text',
                   text: 'Titled Text. Description or Image Caption',
                 ),

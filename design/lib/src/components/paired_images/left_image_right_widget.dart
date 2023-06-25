@@ -18,6 +18,7 @@ class LeftImageRightWidget extends StatelessWidget {
   final ImageTypes imageType;
   final RightWidgetVerticalAlignment verticalAlignment;
   final int widgetPercentage;
+  final double gap;
   final EdgeInsetsGeometry? padding;
   final BoxDecoration? decoration;
 
@@ -28,6 +29,7 @@ class LeftImageRightWidget extends StatelessWidget {
     required this.imageType,
     this.verticalAlignment = RightWidgetVerticalAlignment.center,
     this.widgetPercentage = 50,
+    this.gap = 0,
     this.padding,
     this.decoration,
   });
@@ -47,9 +49,7 @@ class LeftImageRightWidget extends StatelessWidget {
               imageType: imageType,
             ),
           ),
-          const SizedBox(
-            width: 12,
-          ),
+          _getGap(),
           Expanded(
             flex: _getRatio(widgetPercentage),
             child: pairedWidget,
@@ -82,4 +82,15 @@ class LeftImageRightWidget extends StatelessWidget {
       return widgetPercentage;
     }
   }
+
+  Widget _getGap() {
+    if(gap < 1) {
+      return const SizedBox.shrink();
+    }
+    return SizedBox(
+      width: gap,
+      child: Container(),
+    );
+  }
+
 }
