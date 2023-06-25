@@ -68,6 +68,22 @@ class Example1 extends StatelessWidget {
                 imageType: ImageTypes.asset,
               ),
             ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.25,
+              child: const LeftImageRightWidget(
+                verticalAlignment: RightWidgetVerticalAlignment.stretch,
+                pairedWidget: TitledText(
+                  decoration: BoxDecoration(
+                    color: Colors.purpleAccent,
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  title: 'Titled Text',
+                  text: 'Titled Text. Description or Image Caption',
+                ),
+                imagePath: 'assets/images/placeholder.png',
+                imageType: ImageTypes.asset,
+              ),
+            ),
           ],
         ),
       ),

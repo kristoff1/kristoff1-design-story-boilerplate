@@ -16,6 +16,8 @@ class RightImageLeftWidget extends StatelessWidget {
   final String imagePath;
   final ImageTypes imageType;
   final LeftWidgetVerticalAlignment verticalAlignment;
+  final int widgetPercentage;
+  final EdgeInsetsGeometry? padding;
   final BoxDecoration? decoration;
 
   const RightImageLeftWidget({
@@ -24,6 +26,8 @@ class RightImageLeftWidget extends StatelessWidget {
     required this.imagePath,
     required this.imageType,
     this.verticalAlignment = LeftWidgetVerticalAlignment.center,
+    this.widgetPercentage = 50,
+    this.padding,
     this.decoration,
   });
 
@@ -31,17 +35,19 @@ class RightImageLeftWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: decoration,
-      padding: const EdgeInsets.all(8),
+      padding: padding,
       child: Row(
         crossAxisAlignment: _getVerticalAlignment(verticalAlignment),
         children: [
           Expanded(
+            flex: _getRatio(widgetPercentage),
             child: pairedWidget,
           ),
           const SizedBox(
             width: 12,
           ),
           Expanded(
+            flex: 100 - _getRatio(widgetPercentage),
             child: BaseImage(
               imagePath: imagePath,
               imageType: imageType,
@@ -65,4 +71,15 @@ class RightImageLeftWidget extends StatelessWidget {
         return CrossAxisAlignment.stretch;
     }
   }
+
+  int _getRatio(int widgetPercentage) {
+    if(widgetPercentage > 90) {
+      return 90;
+    } else if (widgetPercentage < 10) {
+      return 10;
+    } else {
+      return widgetPercentage;
+    }
+  }
+
 }
