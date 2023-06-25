@@ -73,6 +73,18 @@ class TextComponentsShowcase extends StatelessWidget {
             text: 'Numbered and Title Text. Description or Image Caption',
             title: 'Title',
             textDirection: SideNumberedTitledTextDirection.left,
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            numberPadding: EdgeInsets.all(8),
+            numberDecoration: BoxDecoration(
+              color: Colors.orange,
+              border: Border.fromBorderSide(
+                BorderSide(
+                  color: Colors.blue,
+                  width: 2,
+                ),
+              ),
+              shape: BoxShape.circle,
+            ),
           ),
           Divider(),
           SideNumberedTitledText(
