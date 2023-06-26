@@ -6,23 +6,34 @@ class Example2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double horizontalIndent = 32;
+    const double verticalGap = 18;
     return Theme(
       data: ThemeData(
         textTheme: const TextTheme(
-          titleLarge: TextStyle(
+          headlineMedium: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
-          titleMedium: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.normal, color: Colors.white),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+          ),
+          titleLarge: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.deepOrange),
           bodyMedium: TextStyle(
-              fontSize: 14, fontWeight: FontWeight.normal, color: Colors.white),
+              fontSize: 14,
+              fontWeight: FontWeight.normal,
+              color: Colors.black87),
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       child: Scaffold(
+        backgroundColor: const Color(0xfff6f4f1),
         body: ListView(
           children: [
             HeroImageCaptioned(
@@ -37,21 +48,69 @@ class Example2 extends StatelessWidget {
               brandImageType: ImageTypes.asset,
             ),
             const BiWidgets(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
-              ),
+              padding: EdgeInsets.symmetric(
+                  vertical: verticalGap, horizontal: horizontalIndent),
               leftWidget: TitledText(
                 title: 'Titled Text',
                 text: 'Titled Text. Description or Image Caption',
-                textDirection: TitledTextDirection.center,
+                textDirection: TitledTextDirection.left,
               ),
               rightWidget: TitledText(
                 title: 'Titled Text',
                 text: 'Titled Text. Description or Image Caption',
-                textDirection: TitledTextDirection.center,
+                textDirection: TitledTextDirection.left,
               ),
             ),
+            const Divider(
+                indent: horizontalIndent, endIndent: horizontalIndent),
+            const BiWidgets(
+              padding: EdgeInsets.symmetric(
+                  vertical: verticalGap, horizontal: horizontalIndent),
+              leftWidget: TitledText(
+                title: 'Titled Text',
+                text: 'Titled Text. Description or Image Caption',
+                textDirection: TitledTextDirection.left,
+              ),
+              rightWidget: TitledText(
+                title: 'Titled Text',
+                text: 'Titled Text. Description or Image Caption',
+                textDirection: TitledTextDirection.left,
+              ),
+            ),
+            const Divider(
+                indent: horizontalIndent, endIndent: horizontalIndent),
+            const BiWidgets(
+              padding: EdgeInsets.symmetric(
+                  vertical: verticalGap, horizontal: horizontalIndent),
+              leftWidget: TitledText(
+                title: 'Titled Text',
+                text: 'Titled Text. Description or Image Caption',
+                textDirection: TitledTextDirection.left,
+              ),
+              rightWidget: TitledText(
+                title: 'Titled Text',
+                text: 'Titled Text. Description or Image Caption',
+                textDirection: TitledTextDirection.left,
+              ),
+            ),
+            const Divider(
+                indent: horizontalIndent, endIndent: horizontalIndent),
+            const BiWidgets(
+              padding: EdgeInsets.symmetric(
+                  vertical: verticalGap, horizontal: horizontalIndent),
+              leftWidget: TitledText(
+                title: 'Titled Text',
+                text: 'Titled Text. Description or Image Caption',
+                textDirection: TitledTextDirection.left,
+              ),
+              rightWidget: TitledText(
+                title: 'Titled Text',
+                text: 'Titled Text. Description or Image Caption',
+                textDirection: TitledTextDirection.left,
+              ),
+            ),
+            const Divider(
+                indent: horizontalIndent, endIndent: horizontalIndent),
           ],
         ),
       ),

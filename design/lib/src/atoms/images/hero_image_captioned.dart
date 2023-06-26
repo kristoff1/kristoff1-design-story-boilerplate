@@ -80,7 +80,7 @@ class HeroImageCaptioned extends StatelessWidget {
         Text(
           title,
           textAlign: _getTextAlign(alignment),
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         const SizedBox(
           height: 12,
@@ -97,7 +97,7 @@ class HeroImageCaptioned extends StatelessWidget {
     return Text(
       subTitle,
       textAlign: _getTextAlign(alignment),
-      style: Theme.of(context).textTheme.titleMedium,
+      style: Theme.of(context).textTheme.headlineSmall,
     );
   }
 
