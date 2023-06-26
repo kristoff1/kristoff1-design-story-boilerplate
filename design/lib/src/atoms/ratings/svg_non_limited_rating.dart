@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class NonLimitedIconRating extends StatelessWidget {
+class SvgNonLimitedIconRating extends StatelessWidget {
 
   final int rating;
   final String icon;
 
-  const NonLimitedIconRating({
+  const SvgNonLimitedIconRating({
     super.key,
     required this.rating,
     required this.icon,
@@ -37,7 +38,7 @@ class NonLimitedIconRating extends StatelessWidget {
   }
 
   Widget _getFullyFilledIcon() {
-    return Image.asset(icon,);
+    return SvgPicture.asset(icon,);
   }
 
 }

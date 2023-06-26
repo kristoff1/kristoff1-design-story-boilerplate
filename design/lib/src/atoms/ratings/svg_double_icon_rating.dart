@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-enum DoubleIconRatingMaximum {
+enum SvgDoubleIconRatingMaximum {
   fiveMax,
   tenMax,
 }
 
-class DoubleIconRating extends StatelessWidget {
+class SvgDoubleIconRating extends StatelessWidget {
 
   final int rating;
-  final DoubleIconRatingMaximum maximumLimit;
+  final SvgDoubleIconRatingMaximum maximumLimit;
   final String filledIcon;
   final String unfilledIcon;
 
-  const DoubleIconRating({
+  const SvgDoubleIconRating({
     super.key,
     required this.rating,
     required this.maximumLimit,
@@ -38,8 +39,8 @@ class DoubleIconRating extends StatelessWidget {
     );
   }
 
-  Widget _getBottomView(DoubleIconRatingMaximum maximumLimit) {
-    if (maximumLimit == DoubleIconRatingMaximum.fiveMax) {
+  Widget _getBottomView(SvgDoubleIconRatingMaximum maximumLimit) {
+    if (maximumLimit == SvgDoubleIconRatingMaximum.fiveMax) {
       return const SizedBox.shrink();
     }
     return Row(
@@ -62,11 +63,11 @@ class DoubleIconRating extends StatelessWidget {
   }
 
   Widget _getFullyFilledIcon() {
-    return Image.asset(filledIcon);
+    return SvgPicture.asset(filledIcon);
   }
 
   Widget _getEmptyIcon() {
-    return Image.asset(unfilledIcon);
+    return SvgPicture.asset(unfilledIcon);
   }
 
 }

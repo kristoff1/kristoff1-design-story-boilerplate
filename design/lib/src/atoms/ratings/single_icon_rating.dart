@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-enum Maximum {
+enum SingleIconRatingMaximum {
   fiveMax,
   tenMax,
 }
 
 class SingleIconRating extends StatelessWidget {
   final double rating;
-  final Color filledColors;
+  final Color? filledColors;
   final Color unFilledColors;
-  final Maximum maximumLimit;
+  final SingleIconRatingMaximum maximumLimit;
   final String icon;
 
   const SingleIconRating({
     super.key,
     required this.rating,
-    required this.filledColors,
     required this.unFilledColors,
     required this.maximumLimit,
+    this.filledColors,
     required this.icon,
   });
 
@@ -41,8 +41,8 @@ class SingleIconRating extends StatelessWidget {
     );
   }
 
-  Widget _getBottomView(Maximum maximumLimit) {
-    if (maximumLimit == Maximum.fiveMax) {
+  Widget _getBottomView(SingleIconRatingMaximum maximumLimit) {
+    if (maximumLimit == SingleIconRatingMaximum.fiveMax) {
       return const SizedBox.shrink();
     }
     return Row(
@@ -67,7 +67,7 @@ class SingleIconRating extends StatelessWidget {
   }
 
   Widget _getFullyFilledIcon() {
-    return Image.asset(icon, color: filledColors,);
+    return Image.asset(icon, color: filledColors, fit:BoxFit.cover);
   }
 
   Widget _getHalfFilledIcon() {
@@ -86,6 +86,6 @@ class SingleIconRating extends StatelessWidget {
   }
 
   Widget _getEmptyIcon() {
-    return Image.asset(icon, color: unFilledColors,);
+    return Image.asset(icon, color: unFilledColors, fit:BoxFit.cover);
   }
 }

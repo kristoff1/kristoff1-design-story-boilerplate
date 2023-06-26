@@ -11,6 +11,11 @@ export 'src/components/multi_widgets/bi_widgets.dart';
 
 //Ratings
 export 'src/atoms/ratings/single_icon_rating.dart';
+export 'src/atoms/ratings/double_icon_rating.dart';
+export 'src/atoms/ratings/non_limited_rating.dart';
+export 'src/atoms/ratings/svg_single_icon_rating.dart';
+export 'src/atoms/ratings/svg_double_icon_rating.dart';
+export 'src/atoms/ratings/svg_non_limited_rating.dart';
 
 //Texts Widgets
 export 'src/components/text_widgets/titled_texts.dart';
