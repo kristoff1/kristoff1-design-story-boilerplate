@@ -4,6 +4,7 @@ import 'package:example/pages/example_1.dart';
 import 'package:example/pages/example_2.dart';
 import 'package:example/pages/image_and_widgets_showcase.dart';
 import 'package:example/pages/letter_sized_component_showcase.dart';
+import 'package:example/pages/rating_showcase.dart';
 import 'package:example/pages/text_components_showcase.dart';
 import 'package:flutter/material.dart';
 
@@ -51,14 +52,19 @@ class Catalog extends StatelessWidget {
               child: const Text('Image and Widget Showcase')),
           ElevatedButton(
               onPressed: () {
+                _navigateToPage(context, const RatingShowcase());
+              },
+              child: const Text('Rating Showcase')),
+          ElevatedButton(
+              onPressed: () {
                 _navigateToPage(context, const Example1());
               },
-              child: const Text('Example 1')),
+              child: const Text('Template 1')),
           ElevatedButton(
               onPressed: () {
                 _navigateToPage(context, const Example2());
               },
-              child: const Text('Example 2')),
+              child: const Text('Template 2')),
         ],
       ),
     );

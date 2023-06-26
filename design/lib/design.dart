@@ -9,6 +9,9 @@ export 'src/atoms/images/hero_image_captioned.dart';
 //Widgets
 export 'src/components/multi_widgets/bi_widgets.dart';
 
+//Ratings
+export 'src/atoms/ratings/single_icon_rating.dart';
+
 //Texts Widgets
 export 'src/components/text_widgets/titled_texts.dart';
 export 'src/components/text_widgets/numbered_text.dart';
