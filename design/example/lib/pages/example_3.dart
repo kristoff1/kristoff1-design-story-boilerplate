@@ -22,7 +22,7 @@ class Example3 extends StatelessWidget {
         useMaterial3: true,
       ),
       child: Scaffold(
-        backgroundColor: const Color(0xFFEDDDC6),
+        backgroundColor: const Color(0xfff6f4f1),
         body: ListView(
           children: [
             Container(

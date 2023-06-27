@@ -7,6 +7,7 @@ export 'src/atoms/images/dominant_image.dart';
 export 'src/atoms/images/hero_image_captioned.dart';
 
 //Widgets
+export 'src/components/extraboundary_widgets/overdraw_components.dart';
 export 'src/components/multi_widgets/bi_widgets.dart';
 
 //Numbers
