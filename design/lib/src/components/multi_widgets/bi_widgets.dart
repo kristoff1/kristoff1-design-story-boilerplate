@@ -4,6 +4,7 @@ class BiWidgets extends StatelessWidget {
   final Widget leftWidget;
   final Widget rightWidget;
   final int leftWidgetPercentage;
+  final double? gap;
   final BoxDecoration? decoration;
   final EdgeInsetsGeometry? padding;
 
@@ -12,6 +13,7 @@ class BiWidgets extends StatelessWidget {
     required this.leftWidget,
     required this.rightWidget,
     this.leftWidgetPercentage = 50,
+    this.gap,
     this.decoration,
     this.padding,
   });
@@ -27,6 +29,7 @@ class BiWidgets extends StatelessWidget {
             flex: _getLeftWidgetPercentage(),
             child: leftWidget,
           ),
+          _getGap(),
           Expanded(
             flex: 100 - _getLeftWidgetPercentage(),
             child: rightWidget,
@@ -44,4 +47,13 @@ class BiWidgets extends StatelessWidget {
     }
     return leftWidgetPercentage;
   }
+
+  Widget _getGap() {
+    if (gap != null) {
+      return SizedBox(width: gap,);
+    } else {
+      return const SizedBox.shrink();
+    }
+  }
+
 }

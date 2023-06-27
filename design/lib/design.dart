@@ -9,6 +9,10 @@ export 'src/atoms/images/hero_image_captioned.dart';
 //Widgets
 export 'src/components/multi_widgets/bi_widgets.dart';
 
+//Numbers
+export 'src/atoms/numbers/circle_number_widget.dart';
+export 'src/atoms/numbers/square_number_widget.dart';
+
 //Ratings
 export 'src/atoms/ratings/single_icon_rating.dart';
 export 'src/atoms/ratings/double_icon_rating.dart';

@@ -2,6 +2,7 @@ import 'package:example/pages/component_images_showcase.dart';
 import 'package:example/pages/components_image_interactive_showcase.dart';
 import 'package:example/pages/example_1.dart';
 import 'package:example/pages/example_2.dart';
+import 'package:example/pages/example_3.dart';
 import 'package:example/pages/image_and_widgets_showcase.dart';
 import 'package:example/pages/letter_sized_component_showcase.dart';
 import 'package:example/pages/rating_showcase.dart';
@@ -65,6 +66,11 @@ class Catalog extends StatelessWidget {
                 _navigateToPage(context, const Example2());
               },
               child: const Text('Template 2')),
+          ElevatedButton(
+              onPressed: () {
+                _navigateToPage(context, const Example3());
+              },
+              child: const Text('Template 3')),
         ],
       ),
     );

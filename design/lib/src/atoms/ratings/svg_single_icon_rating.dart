@@ -10,6 +10,7 @@ class SvgSingleIconRating extends StatelessWidget {
   final double rating;
   final Color? filledColors;
   final Color unFilledColors;
+  final double iconSize;
   final SvgSingleIconRatingMaximum maximumLimit;
   final String icon;
 
@@ -18,6 +19,7 @@ class SvgSingleIconRating extends StatelessWidget {
     required this.rating,
     required this.unFilledColors,
     required this.maximumLimit,
+    this.iconSize = 32,
     this.filledColors,
     required this.icon,
   });
@@ -90,6 +92,8 @@ class SvgSingleIconRating extends StatelessWidget {
   Widget _getFullyFilledIcon() {
     return SvgPicture.asset(
       icon,
+      height: iconSize,
+      width: iconSize,
       fit: BoxFit.contain,
       colorFilter: _getColorFilter(
         filledColors,
@@ -99,31 +103,40 @@ class SvgSingleIconRating extends StatelessWidget {
 
   Widget _getHalfFilledIcon() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
-            child: AspectRatio(
-          aspectRatio: 0.5,
-          child: SvgPicture.asset(
-            icon,
-            fit: BoxFit.cover,
-            alignment: Alignment.centerLeft,
-            colorFilter: _getColorFilter(
-              filledColors,
+        SizedBox(
+          height: iconSize,
+          width: iconSize / 2,
+          child: AspectRatio(
+            aspectRatio: 0.5,
+            child: SvgPicture.asset(
+              icon,
+              height: iconSize,
+              width: iconSize,
+              fit: BoxFit.cover,
+              alignment: Alignment.centerLeft,
+              colorFilter: _getColorFilter(
+                filledColors,
+              ),
             ),
           ),
-        )),
-        Expanded(
-            child: AspectRatio(
-          aspectRatio: 0.5,
-          child: SvgPicture.asset(
-            icon,
-            fit: BoxFit.cover,
-            alignment: Alignment.centerLeft,
-            colorFilter: _getColorFilter(
-              unFilledColors,
+        ),
+        SizedBox(
+          height: iconSize,
+          width: iconSize / 2,
+          child: AspectRatio(
+            aspectRatio: 0.5,
+            child: SvgPicture.asset(
+              icon,
+              fit: BoxFit.cover,
+              alignment: Alignment.centerRight,
+              colorFilter: _getColorFilter(
+                unFilledColors,
+              ),
             ),
           ),
-        )),
+        ),
       ],
     );
   }
@@ -131,6 +144,8 @@ class SvgSingleIconRating extends StatelessWidget {
   Widget _getEmptyIcon() {
     return SvgPicture.asset(
       icon,
+      height: iconSize,
+      width: iconSize,
       fit: BoxFit.contain,
       colorFilter: _getColorFilter(
         unFilledColors,

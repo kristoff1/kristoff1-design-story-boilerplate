@@ -18,6 +18,7 @@ class TitledText extends StatelessWidget {
   final String title;
   final TitledTextDirection textDirection;
   final TextVerticalAlignment verticalAlignment;
+  final double? gap;
   final BorderRadius? borderRadius;
   final BoxDecoration? decoration;
   final EdgeInsetsGeometry? padding;
@@ -28,6 +29,7 @@ class TitledText extends StatelessWidget {
     required this.title,
     this.textDirection = TitledTextDirection.left,
     this.verticalAlignment = TextVerticalAlignment.center,
+    this.gap,
     this.borderRadius,
     this.decoration,
     this.padding,
@@ -47,9 +49,7 @@ class TitledText extends StatelessWidget {
             textAlign: _getTextAlign(textDirection),
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          _getGap(),
           Text(
             text,
             textAlign: _getTextAlign(textDirection),
@@ -93,6 +93,16 @@ class TitledText extends StatelessWidget {
         return MainAxisAlignment.end;
       case TextVerticalAlignment.stretch:
         return MainAxisAlignment.spaceBetween;
+    }
+  }
+
+  Widget _getGap() {
+    if (gap != null) {
+      return SizedBox(
+        height: gap,
+      );
+    } else {
+      return const SizedBox();
     }
   }
 }
