@@ -9,6 +9,15 @@ export 'src/atoms/images/hero_image_captioned.dart';
 //Widgets
 export 'src/components/extraboundary_widgets/overdraw_components.dart';
 export 'src/components/multi_widgets/bi_widgets.dart';
+export 'src/components/multi_widgets/horizontally_connected_widget.dart';
+export 'src/components/multi_widgets/vertically_connected_widget.dart';
+
+//Connector
+export 'src/atoms/connectors/directions/single_horizontal_direction.dart';
+export 'src/atoms/connectors/directions/double_horizontal_direction.dart';
+export 'src/atoms/connectors/directions/single_vertical_direction.dart';
+export 'src/atoms/connectors/directions/double_vertical_direction.dart';
+
 
 //Numbers
 export 'src/atoms/numbers/circle_number_widget.dart';
