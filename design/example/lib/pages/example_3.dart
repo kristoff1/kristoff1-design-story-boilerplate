@@ -32,6 +32,7 @@ class Example3 extends StatelessWidget {
                 leftWidgetPercentage: 15,
                 leftWidget: SquareNumberingWidget(
                   number: 1,
+                  shadows: Shadows.cardShadow,
                   backgroundColor: Colors.white,
                   radiusValue: 8,
                   paddingValue: 12,
@@ -39,12 +40,7 @@ class Example3 extends StatelessWidget {
                 gap: 12,
                 rightWidget: TitledText(
                   padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                    color: Colors.white,
-                  ),
+                  decoration: ContainerDecoration.whiteCardDecoration,
                   title: 'Titled Text',
                   gap: 4,
                   text: 'Titled Text. Description or Image Caption',
@@ -55,40 +51,48 @@ class Example3 extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               height: MediaQuery.of(context).size.height * 0.25,
-              child: const BiWidgets(
+              child: BiWidgets(
                 leftWidgetPercentage: 15,
-                leftWidget: SquareNumberingWidget(
+                leftWidget: const SquareNumberingWidget(
                   number: 2,
+                  shadows: Shadows.cardShadow,
                   backgroundColor: Colors.white,
                   radiusValue: 8,
                   paddingValue: 12,
                 ),
                 gap: 12,
-                rightWidget: SvgSingleIconRating(
-                  rating: 4.5,
-                  icon: 'assets/icons/star.svg',
-                  unFilledColors: Colors.blueGrey,
-                  maximumLimit: SvgSingleIconRatingMaximum.fiveMax,
+                rightWidget: Container(
+                  decoration: ContainerDecoration.whiteCardDecoration,
+                  child: const SvgSingleIconRating(
+                    rating: 4.5,
+                    icon: 'assets/icons/star.svg',
+                    unFilledColors: Colors.blueGrey,
+                    maximumLimit: SvgSingleIconRatingMaximum.fiveMax,
+                  ),
                 ),
               ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               height: MediaQuery.of(context).size.height * 0.25,
-              child: const BiWidgets(
+              child: BiWidgets(
                 leftWidgetPercentage: 15,
-                leftWidget: SquareNumberingWidget(
+                leftWidget: const SquareNumberingWidget(
                   number: 3,
+                  shadows: Shadows.cardShadow,
                   backgroundColor: Colors.white,
                   radiusValue: 8,
                   paddingValue: 12,
                 ),
                 gap: 12,
-                rightWidget: SvgSingleIconRating(
-                  rating: 3.5,
-                  icon: 'assets/icons/star.svg',
-                  unFilledColors: Colors.blueGrey,
-                  maximumLimit: SvgSingleIconRatingMaximum.fiveMax,
+                rightWidget: Container(
+                  decoration: ContainerDecoration.whiteCardDecoration,
+                  child: const SvgSingleIconRating(
+                    rating: 3.5,
+                    icon: 'assets/icons/star.svg',
+                    unFilledColors: Colors.blueGrey,
+                    maximumLimit: SvgSingleIconRatingMaximum.fiveMax,
+                  ),
                 ),
               ),
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Shadow {
+class Shadows {
   static const List<BoxShadow> cardShadow = [
     BoxShadow(
       offset: Offset(1, 1),

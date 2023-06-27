@@ -13,6 +13,10 @@ export 'src/components/multi_widgets/bi_widgets.dart';
 export 'src/atoms/numbers/circle_number_widget.dart';
 export 'src/atoms/numbers/square_number_widget.dart';
 
+//Decorations
+export 'src/decorations/container_decoration.dart';
+export 'src/decorations/shadows.dart';
+
 //Ratings
 export 'src/atoms/ratings/single_icon_rating.dart';
 export 'src/atoms/ratings/double_icon_rating.dart';
