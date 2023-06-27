@@ -7,11 +7,11 @@ enum SvgDoubleIconRatingMaximum {
 }
 
 class SvgDoubleIconRating extends StatelessWidget {
-
   final int rating;
   final SvgDoubleIconRatingMaximum maximumLimit;
   final String filledIcon;
   final String unfilledIcon;
+  final double iconSize;
 
   const SvgDoubleIconRating({
     super.key,
@@ -19,6 +19,7 @@ class SvgDoubleIconRating extends StatelessWidget {
     required this.maximumLimit,
     required this.filledIcon,
     required this.unfilledIcon,
+    this.iconSize = 32,
   });
 
   @override
@@ -27,11 +28,21 @@ class SvgDoubleIconRating extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(child: _getIcon(1, rating),),
-            Expanded(child: _getIcon(2, rating),),
-            Expanded(child: _getIcon(3, rating),),
-            Expanded(child: _getIcon(4, rating),),
-            Expanded(child: _getIcon(5, rating),),
+            Expanded(
+              child: _getIcon(1, rating),
+            ),
+            Expanded(
+              child: _getIcon(2, rating),
+            ),
+            Expanded(
+              child: _getIcon(3, rating),
+            ),
+            Expanded(
+              child: _getIcon(4, rating),
+            ),
+            Expanded(
+              child: _getIcon(5, rating),
+            ),
           ],
         ),
         _getBottomView(maximumLimit),
@@ -45,11 +56,21 @@ class SvgDoubleIconRating extends StatelessWidget {
     }
     return Row(
       children: [
-        Expanded(child: _getIcon(6, rating),),
-        Expanded(child: _getIcon(7, rating),),
-        Expanded(child: _getIcon(8, rating),),
-        Expanded(child: _getIcon(9, rating),),
-        Expanded(child: _getIcon(10, rating),),
+        Expanded(
+          child: _getIcon(6, rating),
+        ),
+        Expanded(
+          child: _getIcon(7, rating),
+        ),
+        Expanded(
+          child: _getIcon(8, rating),
+        ),
+        Expanded(
+          child: _getIcon(9, rating),
+        ),
+        Expanded(
+          child: _getIcon(10, rating),
+        ),
       ],
     );
   }
@@ -57,17 +78,24 @@ class SvgDoubleIconRating extends StatelessWidget {
   Widget _getIcon(int milestone, int rating) {
     if (milestone <= rating.floor()) {
       return _getFullyFilledIcon();
-    }  else {
+    } else {
       return _getEmptyIcon();
     }
   }
 
   Widget _getFullyFilledIcon() {
-    return SvgPicture.asset(filledIcon);
+    return SvgPicture.asset(
+      filledIcon,
+      width: iconSize,
+      height: iconSize,
+    );
   }
 
   Widget _getEmptyIcon() {
-    return SvgPicture.asset(unfilledIcon);
+    return SvgPicture.asset(
+      unfilledIcon,
+      width: iconSize,
+      height: iconSize,
+    );
   }
-
 }
